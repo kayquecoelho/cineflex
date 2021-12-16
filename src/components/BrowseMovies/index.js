@@ -1,6 +1,7 @@
 import {useState, useEffect}from "react"
 import axios from "axios"
 import "./style.css"
+import { Link } from "react-router-dom";
 
 export default function BrowseMovies (){
     const [movies, setMovies] = useState([]);
@@ -17,15 +18,18 @@ export default function BrowseMovies (){
             <p className="title">Selecione o filme</p>  
 
             <div className="movies-section">
-                {movies.map(item => <Movie data={item}></Movie>)}
+                {movies.map(item => <Movie {...item}></Movie>)}
             </div>
         </div>
     )
 }
 function Movie (props){
+    console.log(props)
     return (
-        <div className="movie">
-            <img src={props.data.posterURL}/>
-        </div>
+        <Link to={`/sessoes/${props.id}`}>
+            <div className="movie">
+                <img src={props.posterURL}/>
+            </div>
+        </Link>
     )
 }

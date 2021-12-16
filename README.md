@@ -1,32 +1,28 @@
-<p align="center">
-  <img src="public/assets/cineflex.ico" height = "150" alt="" />
-</p>
-
 # Descrição
 
 Nessa semana você fará uma Single-Page Application para um cinema, usando React Router!
 
 ## Requisitos
 
-- [] Buscar as informações dos filmes pela API fornecida e exibir conforme layout fornecido; <br>
-- [] Ao clicar em um filme, o usuário deve ser redirecionado para a rota "/sessoes/:idFilme", sendo :idFilme o id do filme clicado; <br>
-- [] A partir do id da URL, obtenha da API as sessões disponíveis para o filme e exiba conforme o layout fornecido; <br>
-- []  Ao clicar em uma sessão, o usuário deve ser redirecionado para a rota "/assentos/:idSessao", onde :idSessao é o id da sessão escolhida; <br>
-- [] A partir do id da sessão, buscar os dados da sessão da API e exibir o layout conforme fornecido;<br>
-- [] Ao clicar em um assento disponível, o assento deve ser marcado como "Selecionado"; <br>
-- [] Ao clicar novamente em um assento selecionado, este deve voltar para "Disponível"; <br>
-- [] Ao clicar novamente em um assento selecionado, este deve voltar para "Disponível"; <br>
-- [] O usuário pode selecionar vários assentos; <br>
-- [] O usuário deve poder inserir o nome e o CPF do comprador ;<br>
-- [] o clicar em "Reservar assento(s)", o pedido deve ser enviado para o servidor e o usuário deve ser redirecionado para a rota "/sucesso".  Isso fará com os assentos marcados fiquem indisponíveis para outras marcações;<br>
-- [] Ao longo das telas de Sessão e Assento, deve ser exibido um rodapé com as informações do filme selecionado. Estas informações virão das chamadas à API em cada tela; <br>
-- [] Ao clicar em "Home" o usuário deve voltar para a rota inicial ("/"), com o pedido zerado; <br>
-- [] Adicione um botão de voltar no topo do site à esquerda; <br>
-- [] Ao clicar no botão voltar, o usuário deve retornar para a página que estava anteriormente; <br>
-- [] O botão não deve ser exibido na tela inicial; <br>
-- [] Faça com que os campos de Nome e CPF do comprador deixem de ser um único campo para serem campos pra cada assento selecionado. Ou seja, cada assento selecionado terá seu próprio Nome e CPF; <br>
-- [] Conforme a pessoa for selecionando assentos, os campos devem ser exibidos abaixo na quantidade condizente com os assentos selecionados; <br>
-- [] Ao desmarcar um assento que já possuía dados preenchidos, pergunte ao usuário com um confirm se ele gostaria realmente de remover o assento e apagar os dados; <br>
+- [X] Buscar as informações dos filmes pela API fornecida e exibir conforme layout fornecido; <br>
+- [X] Ao clicar em um filme, o usuário deve ser redirecionado para a rota "/sessoes/:idFilme", sendo :idFilme o id do filme clicado; <br>
+- [X] A partir do id da URL, obtenha da API as sessões disponíveis para o filme e exiba conforme o layout fornecido; <br>
+- [ ]  Ao clicar em uma sessão, o usuário deve ser redirecionado para a rota "/assentos/:idSessao", onde :idSessao é o id da sessão escolhida; <br>
+- [ ] A partir do id da sessão, buscar os dados da sessão da API e exibir o layout conforme fornecido;<br>
+- [ ] Ao clicar em um assento disponível, o assento deve ser marcado como "Selecionado"; <br>
+- [ ] Ao clicar novamente em um assento selecionado, este deve voltar para "Disponível"; <br>
+- [ ] Ao clicar novamente em um assento selecionado, este deve voltar para "Disponível"; <br>
+- [ ] O usuário pode selecionar vários assentos; <br>
+- [ ] O usuário deve poder inserir o nome e o CPF do comprador ;<br>
+- [ ] o clicar em "Reservar assento(s)", o pedido deve ser enviado para o servidor e o usuário deve ser redirecionado para a rota "/sucesso".  Isso fará com os assentos marcados fiquem indisponíveis para outras marcações;<br>
+- [ ] Ao longo das telas de Sessão e Assento, deve ser exibido um rodapé com as informações do filme selecionado. Estas informações virão das chamadas à API em cada tela; <br>
+- [ ] Ao clicar em "Home" o usuário deve voltar para a rota inicial ("/"), com o pedido zerado; <br>
+- [ ] Adicione um botão de voltar no topo do site à esquerda; <br>
+- [ ] Ao clicar no botão voltar, o usuário deve retornar para a página que estava anteriormente; <br>
+- [ ] O botão não deve ser exibido na tela inicial; <br>
+- [ ] Faça com que os campos de Nome e CPF do comprador deixem de ser um único campo para serem campos pra cada assento selecionado. Ou seja, cada assento selecionado terá seu próprio Nome e CPF; <br>
+- [ ] Conforme a pessoa for selecionando assentos, os campos devem ser exibidos abaixo na quantidade condizente com os assentos selecionados; <br>
+- [ ] Ao desmarcar um assento que já possuía dados preenchidos, pergunte ao usuário com um confirm se ele gostaria realmente de remover o assento e apagar os dados; <br>
 
 ### Tech Stack
 ---
@@ -41,7 +37,6 @@ Linguagens e ferramentas:
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
 <p>
 
-<br>
 
 ### Deploy
 ---
