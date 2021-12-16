@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import loading from "../../assets/load.gif";
 import "./style.css";
 
@@ -46,8 +46,10 @@ function Sessions ({day}){
 }
 function ShowTimes ({name, id}) {
     return (
-        <div className="show-times">
+        <Link to={`/assentos/${id}`}>
+        <div key ={id} className="show-times">
         {name}
         </div>
+        </Link>
     )
 }
