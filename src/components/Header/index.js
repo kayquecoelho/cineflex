@@ -1,9 +1,10 @@
-import "./style.css"
+import style from "./style";
 
 export default function Header (){
+    const { Top } = style
     return (
-        <header className="top">
+        <Top>
             CINEFLEX
-        </header>
+        </Top>
     )
 }

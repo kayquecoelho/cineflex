@@ -1,4 +1,6 @@
-.top {
+import styled from "styled-components";
+
+const Top = styled.header`
     width: 100%;
     height: 67px;
 
@@ -19,4 +21,7 @@
     line-height: 40px;
     letter-spacing: 0em;
     text-align: center;
-}
+`
+export default {
+    Top
+};
