@@ -7,7 +7,7 @@ export default function Seat ({name, id, isAvailable, setBookedSeats, bookedSeat
     function selectSeat (){
        
         if (className === "occupied"){
-            return alert("Este assento está ocupado");
+            return alert("Este assento está ocupado!");
         }
         if (className === "selected"){
             const index = bookedSeats.findIndex((item) => item === id);
@@ -21,7 +21,7 @@ export default function Seat ({name, id, isAvailable, setBookedSeats, bookedSeat
     }
 
     return (
-        <Seat key={id} color={className} onClick={selectSeat}>
+        <Seat color={className} onClick={selectSeat}>
             {name}
         </Seat>
     )

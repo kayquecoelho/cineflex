@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./style.css"
 import loading from "../../assets/load.gif"
 import FinishButton from "../FinishButton";
 import Seat from "../Seat";
 import Form from "../Form";
+import style from "./style";
 
 export default function BookSeats () {
+    const {Content, SeatsBrowse, Subtitle, Container, Footer} = style;
     const {idSession} = useParams()
     const [bookedSeats, setBookedSeats] = useState([])
     const [username, setUsername] = useState("");
@@ -26,33 +27,35 @@ export default function BookSeats () {
     }
 
     return (
-        <div className="content">
+        <Content>
             <p className="title">Selecione o(s) assento(s)</p>
             
-            <div className="seats-browse">
+            <SeatsBrowse>
                 {session.seats.map((seat) =>{ 
                     return (
-                    <Seat {...seat} 
+                    <Seat 
+                    {...seat} 
+                    key={seat.id}
                     setBookedSeats= {setBookedSeats}
                     bookedSeats={bookedSeats}
                     />)
                 })}
-            </div>
+            </SeatsBrowse>
 
-            <div className="subtitle">
-                    <div className="type-box">
+            <Subtitle>
+                    <Container>
                         <div className="type selected"></div>
                         <p className="type-name">Selecionado</p>
-                    </div>
-                    <div className="type-box">
+                    </Container>
+                    <Container>
                         <div className="type free"></div>
                         <p className="type-name">Disponível</p>
-                    </div>
-                    <div className="type-box">
+                    </Container>
+                    <Container>
                         <div className="type occupied"></div>
                         <p className="type-name">Indisponível</p>
-                    </div>
-            </div>
+                    </Container>
+            </Subtitle>
 
             <Form
                 setUsername={setUsername}
@@ -68,7 +71,7 @@ export default function BookSeats () {
                 bookedSeats={bookedSeats}
             />
             
-            <footer className="chosen" >
+            <Footer>
                 <div className="movie">
                     <img src={session.movie.posterURL} alt={session.movie.title}/>
                 </div>
@@ -76,7 +79,7 @@ export default function BookSeats () {
                     <p className="film-title">{session.movie.title}</p>
                     <p className="film-date">{`${session.day.weekday} - ${session.name}`}</p>
                 </div>
-            </footer>
-        </div>
+            </Footer>
+        </Content>
     ) 
 }

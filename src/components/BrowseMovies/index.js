@@ -4,12 +4,12 @@ import "./style.css"
 import { Link } from "react-router-dom";
 
 export default function BrowseMovies (){
-    const [movies, setMovies] = useState([]);
+    const [films, setFilms] = useState([]);
 
     useEffect(()=> {
         const promise = axios.get("https://mock-api.driven.com.br/api/v4/cineflex/movies")
         promise.then((response)=> {
-            setMovies(response.data)
+            setFilms(response.data)
         })
     }, [])
 
@@ -18,17 +18,16 @@ export default function BrowseMovies (){
             <p className="title">Selecione o filme</p>  
 
             <div className="movies-section">
-                {movies.map(item => <Movie {...item}></Movie>)}
+                {films.map(item => <Movie {...item}></Movie>)}
             </div>
         </div>
     )
 }
-function Movie (props){
-    console.log(props)
+function Movie ({id, posterURL}){
     return (
-        <Link to={`/sessoes/${props.id}`}>
+        <Link to={`/sessoes/${id}`}>
             <div className="movie">
-                <img src={props.posterURL}/>
+                <img src={posterURL}/>
             </div>
         </Link>
     )

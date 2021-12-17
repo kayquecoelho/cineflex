@@ -35,7 +35,7 @@ const Seat = styled.div`
         }
     };
     border-radius: 12px;
-
+    cursor: ${(props) => props.color === "occupied" ? "not-allowed": "pointer"};
     color: #000000;
     font-weight: 400;
     font-size: 11px;
@@ -43,12 +43,6 @@ const Seat = styled.div`
     letter-spacing: 0.04em;
 `
 
-/* .occupied:hover {
-    cursor: not-allowed;
-}
-.selected:hover, .free:hover {
-    cursor: pointer;
-}  */
 export default {
     Seat
 };
