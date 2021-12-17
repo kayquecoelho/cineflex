@@ -1,6 +1,7 @@
 .content {
     margin-top: 67px;
     padding: 0 20px;
+    margin-bottom: 125px;
 }
 .content .title {
     height: 110px;
@@ -16,6 +17,7 @@
     letter-spacing: 0.04em;
     text-align: center;
 }
+
 .session {
     letter-spacing: 0.02em;
     text-align: center;
