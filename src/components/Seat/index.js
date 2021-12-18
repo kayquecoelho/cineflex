@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./style";
 
-export default function Seat ({name, id, isAvailable, setBookedSeats, bookedSeats}) {
+export default function Seat ({name, id, isAvailable, setBookedSeats, bookedSeats,  setBookedSeatsName, bookedSeatsName}) {
     const [className, setClassName] = useState(isAvailable ? "free": "occupied")
     const {Seat} = style;
     function selectSeat (){
@@ -18,6 +18,7 @@ export default function Seat ({name, id, isAvailable, setBookedSeats, bookedSeat
         
         setClassName("selected")
         setBookedSeats([...bookedSeats, id])
+        setBookedSeatsName([...bookedSeatsName, name])
     }
 
     return (

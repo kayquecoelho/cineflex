@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export default function Success () {
+export default function Success (props) {
+    console.log(props)
     return (
     <Content>
         <Title>Pedido feito com sucesso!</Title>

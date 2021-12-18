@@ -7,7 +7,7 @@ import "./style.css";
 export default function Schedule (){
     const { idFilm } = useParams();
     const [film, setFilm] = useState(null)
-
+    
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/movies/${idFilm}/showtimes`);
         promise.then((response) => setFilm(response.data))
@@ -21,7 +21,7 @@ export default function Schedule (){
         <div className="content">
             <p className="title">Selecione o horario</p> 
             <div className="film-sessions"> 
-               {film.days.map ((item) => <Sessions day={item}/>)}
+               {film.days.map ((item, index) => <Sessions key={index} day={item}/>)}
             </div>
             <div className="chosen" >
                 <div className="movie">
@@ -39,17 +39,18 @@ function Sessions ({day}){
     <div className="session">
         <p className="date">{`${weekday} - ${date}`}</p>
         <div className="schedules">
-            {showtimes.map ((item) => <ShowTimes {...item} />)}
+            {showtimes.map ((item, index) => <ShowTime key={index} {...item} />)}
         </div>
     </div>
     )
 }
-function ShowTimes ({name, id}) {
+
+function ShowTime ({name, id}) {
     return (
         <Link to={`/assentos/${id}`}>
-        <div key ={id} className="show-times">
-        {name}
-        </div>
+            <div className="show-times">
+            {name}
+            </div>
         </Link>
     )
 }

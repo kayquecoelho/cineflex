@@ -7,18 +7,20 @@ import Seat from "../Seat";
 import Form from "../Form";
 import style from "./style";
 
-export default function BookSeats () {
+export default function BookSeats ({filmInfo,setFilmInfo}) {
     const {Content, SeatsBrowse, Subtitle, Container, Footer} = style;
-    const {idSession} = useParams()
-    const [bookedSeats, setBookedSeats] = useState([])
+    const {idSession} = useParams();
+    const [bookedSeats, setBookedSeats] = useState([]);
+    const [bookedSeatsName, setBookedSeatsName] = useState([]);
     const [username, setUsername] = useState("");
-    const [cpf, setCpf] = useState("")
-    const [session, setSession] = useState()
+    const [cpf, setCpf] = useState("");
+    const [session, setSession] = useState();
 
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/showtimes/${idSession}/seats`)
         promise.then((response) => {
             setSession(response.data)
+            setFilmInfo({...response.data})
         })
     }, [])
 
@@ -34,10 +36,12 @@ export default function BookSeats () {
                 {session.seats.map((seat) =>{ 
                     return (
                     <Seat 
-                    {...seat} 
-                    key={seat.id}
-                    setBookedSeats= {setBookedSeats}
-                    bookedSeats={bookedSeats}
+                        {...seat} 
+                        key={seat.id}
+                        setBookedSeats= {setBookedSeats}
+                        bookedSeats={bookedSeats}
+                        bookedSeatsName={bookedSeatsName}
+                        setBookedSeatsName={setBookedSeatsName}
                     />)
                 })}
             </SeatsBrowse>
@@ -69,6 +73,9 @@ export default function BookSeats () {
                 setCpf={setCpf} 
                 username={username}
                 bookedSeats={bookedSeats}
+                filmInfo={filmInfo}
+                setFilmInfo={setFilmInfo}
+                bookedSeatsName={bookedSeatsName}
             />
             
             <Footer>
