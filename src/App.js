@@ -5,7 +5,6 @@ import BrowseMovies from "./components/BrowseMovies";
 import Header from "./components/Header";
 import Schedule from "./components/Schedule";
 import Success from "./components/Success";
-
 import "./css/reset.css"
 
 export default function App () {

@@ -1,9 +1,10 @@
-import {useState, useEffect}from "react"
 import axios from "axios"
-import "./style.css"
 import { Link } from "react-router-dom";
+import { useState, useEffect }from "react"
+import style from "./style";
 
 export default function BrowseMovies (){
+    const {MoviesSection, Content} = style;
     const [films, setFilms] = useState([]);
 
     useEffect(()=> {
@@ -14,13 +15,13 @@ export default function BrowseMovies (){
     }, [])
 
     return (
-        <div className= "content">
+        <Content>
             <p className="title">Selecione o filme</p>  
 
-            <div className="movies-section">
-                {films.map(item => <Movie {...item}></Movie>)}
-            </div>
-        </div>
+            <MoviesSection>
+                {films.map(item => <Movie key={item.title} {...item}></Movie>)}
+            </MoviesSection>
+        </Content>
     )
 }
 function Movie ({id, posterURL}){

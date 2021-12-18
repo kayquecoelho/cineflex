@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import loading from "../../assets/load.gif";
-import "./style.css";
+import style from "./style";
 
 export default function Schedule (){
+    const {Title, Container, Content, Chosen,} = style;
     const { idFilm } = useParams();
     const [film, setFilm] = useState(null)
     
@@ -14,42 +15,46 @@ export default function Schedule (){
     }, [])
 
     if (!film) {
-        return <img src={loading} alt="loading"/>
+        return null
     }
 
     return (
-        <div className="content">
-            <p className="title">Selecione o horario</p> 
-            <div className="film-sessions"> 
-               {film.days.map ((item, index) => <Sessions key={index} day={item}/>)}
-            </div>
-            <div className="chosen" >
+        <Content>
+            <Title>Selecione o horario</Title> 
+            <Container> 
+               {film.days.map ((item, index) => <Session key={index} day={item}/>)}
+            </Container>
+
+            <Chosen >
                 <div className="movie">
                     <img src={film.posterURL} alt={film.title}/>
                 </div>
                 {film.title}
-            </div>
-        </div>
+            </Chosen>
+        </Content>
     );
 }
 
-function Sessions ({day}){
+function Session ({day}){
+    const {Container } = style;
     const {weekday, date, showtimes} = day;
+
     return (
-    <div className="session">
+    <Container>
         <p className="date">{`${weekday} - ${date}`}</p>
         <div className="schedules">
             {showtimes.map ((item, index) => <ShowTime key={index} {...item} />)}
         </div>
-    </div>
+    </Container>
     )
 }
 
 function ShowTime ({name, id}) {
+
     return (
         <Link to={`/assentos/${id}`}>
             <div className="show-times">
-            {name}
+                {name}
             </div>
         </Link>
     )

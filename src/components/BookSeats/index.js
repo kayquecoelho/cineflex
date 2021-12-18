@@ -25,7 +25,7 @@ export default function BookSeats ({filmInfo,setFilmInfo}) {
     }, [])
 
     if (!session){
-        return <img className="loading" src={loading} alt="loading" />
+        return null;
     }
 
     return (

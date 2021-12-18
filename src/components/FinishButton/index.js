@@ -17,7 +17,7 @@ export default function FinishButton ({bookedSeats, cpf, setCpf, username, filmI
     }, [bookedSeats, cpf, username])
 
     function finish(){
-        const {day, movie} = filmInfo;
+        const {day, movie, name} = filmInfo;
         setCpf(cpf.replace(/\D/g, ''))
         
         const infoToRequest = {
@@ -26,7 +26,7 @@ export default function FinishButton ({bookedSeats, cpf, setCpf, username, filmI
             cpf: cpf
         }
 
-        setFilmInfo({day, movie, username, cpf, seats: bookedSeatsName})
+        setFilmInfo({day, movie, username, cpf, seats: bookedSeatsName, session: name})
 
         const promise = axios.post("https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many", infoToRequest);
         promise.then((response) => console.log(response))
