@@ -27,9 +27,9 @@ export default function Success ({filmInfo: {cpf, day, movie, seats, username, s
                 <p className="username">Nome: {username}</p>
                 <p className="cpf">CPF: {cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")}</p>
             </Container>
-            
-            <button className="comeback">Voltar para Home</button>
-           
+            <Link to="/"> 
+                <button className="comeback">Voltar para Home</button>
+            </Link>
         </Info>
     </Content>)
 }
