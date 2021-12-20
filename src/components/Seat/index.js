@@ -5,12 +5,11 @@ export default function Seat({
   name,
   id,
   isAvailable,
-  setBookedSeats,
-  bookedSeats,
+  setBookedSeatsIds,
+  bookedSeatsIds,
   setBookedSeatsName,
   bookedSeatsName,
 }) {
-    
   const { Seat } = style;
   const [className, setClassName] = useState(isAvailable ? "free" : "occupied");
 
@@ -19,14 +18,17 @@ export default function Seat({
       return alert("Este assento está ocupado!");
     }
     if (className === "selected") {
-      const index = bookedSeats.findIndex((item) => item === id);
-      bookedSeats.splice(index, 1);
+      const removeIndex = bookedSeatsIds.findIndex((item) => item === id);
+      bookedSeatsIds.splice(removeIndex, 1);
+      bookedSeatsName.splice(removeIndex, 1);
+      setBookedSeatsIds([...bookedSeatsIds]);
+      setBookedSeatsName([...bookedSeatsName]);
       setClassName("free");
       return;
     }
 
     setClassName("selected");
-    setBookedSeats([...bookedSeats, id]);
+    setBookedSeatsIds([...bookedSeatsIds, id]);
     setBookedSeatsName([...bookedSeatsName, name]);
   }
 

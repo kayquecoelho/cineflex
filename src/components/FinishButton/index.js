@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import style from "./style";
 
 export default function FinishButton({
-  bookedSeats,
+  bookedSeatsIds,
   cpf,
   setCpf,
   username,
@@ -17,19 +17,22 @@ export default function FinishButton({
   const valCpf = /^(\d{3}\.?\d{3}\.?\d{3}-?\d{2})$/;
 
   useEffect(() => {
-    if (bookedSeats.length !== 0 && username !== "" && valCpf.test(cpf)) {
+    if (bookedSeatsIds.length !== 0 && username !== "" && valCpf.test(cpf)) {
       setPath(true);
     } else {
       setPath(false);
     }
-  }, [bookedSeats, cpf, username]);
+  }, [bookedSeatsIds, cpf, username]);
 
   function finish() {
+    if (bookedSeatsIds.length === 0 || !valCpf.test(cpf) || username === "") {
+      return alert("Preencha os dados corretamente")
+    }
     const { day, movie, name } = filmInfo;
     setCpf(cpf.replace(/\D/g, ""));
 
     const infoToRequest = {
-      ids: bookedSeats,
+      ids: bookedSeatsIds,
       name: username,
       cpf: cpf,
     };

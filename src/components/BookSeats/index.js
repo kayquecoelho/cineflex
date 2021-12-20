@@ -9,7 +9,7 @@ import style from "./style";
 export default function BookSeats({ filmInfo, setFilmInfo }) {
   const { Content, SeatsBrowse, Subtitle, Container, Footer } = style;
   const { idSession } = useParams();
-  const [bookedSeats, setBookedSeats] = useState([]);
+  const [bookedSeatsIds, setBookedSeatsIds] = useState([]);
   const [bookedSeatsName, setBookedSeatsName] = useState([]);
   const [username, setUsername] = useState("");
   const [cpf, setCpf] = useState("");
@@ -39,8 +39,8 @@ export default function BookSeats({ filmInfo, setFilmInfo }) {
             <Seat
               {...seat}
               key={seat.id}
-              setBookedSeats={setBookedSeats}
-              bookedSeats={bookedSeats}
+              setBookedSeatsIds={setBookedSeatsIds}
+              bookedSeatsIds={bookedSeatsIds}
               bookedSeatsName={bookedSeatsName}
               setBookedSeatsName={setBookedSeatsName}
             />
@@ -74,7 +74,7 @@ export default function BookSeats({ filmInfo, setFilmInfo }) {
         cpf={cpf}
         setCpf={setCpf}
         username={username}
-        bookedSeats={bookedSeats}
+        bookedSeatsIds={bookedSeatsIds}
         filmInfo={filmInfo}
         setFilmInfo={setFilmInfo}
         bookedSeatsName={bookedSeatsName}
