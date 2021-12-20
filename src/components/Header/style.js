@@ -21,6 +21,23 @@ const Top = styled.header`
     line-height: 40px;
     letter-spacing: 0em;
     text-align: center;
+
+    .history {
+        cursor: pointer;
+        background-color: #FFFFFF;
+        border: none; 
+        border-radius: 5px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: grey;
+            width: 75px;
+        }
+    }
+
 `
 export default {
     Top

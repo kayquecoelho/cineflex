@@ -17,9 +17,9 @@ Nessa semana você fará uma Single-Page Application para um cinema, usando Reac
 - [X] o clicar em "Reservar assento(s)", o pedido deve ser enviado para o servidor e o usuário deve ser redirecionado para a rota "/sucesso".  Isso fará com os assentos marcados fiquem indisponíveis para outras marcações;<br>
 - [X] Ao longo das telas de Sessão e Assento, deve ser exibido um rodapé com as informações do filme selecionado. Estas informações virão das chamadas à API em cada tela; <br>
 - [X] Ao clicar em "Home" o usuário deve voltar para a rota inicial ("/"), com o pedido zerado; <br>
-- [ ] Adicione um botão de voltar no topo do site à esquerda; <br>
-- [ ] Ao clicar no botão voltar, o usuário deve retornar para a página que estava anteriormente; <br>
-- [ ] O botão não deve ser exibido na tela inicial; <br>
+- [X] Adicione um botão de voltar no topo do site à esquerda; <br>
+- [X] Ao clicar no botão voltar, o usuário deve retornar para a página que estava anteriormente; <br>
+- [X] O botão não deve ser exibido na tela inicial; <br>
 - [ ] Faça com que os campos de Nome e CPF do comprador deixem de ser um único campo para serem campos pra cada assento selecionado. Ou seja, cada assento selecionado terá seu próprio Nome e CPF; <br>
 - [ ] Conforme a pessoa for selecionando assentos, os campos devem ser exibidos abaixo na quantidade condizente com os assentos selecionados; <br>
 - [ ] Ao desmarcar um assento que já possuía dados preenchidos, pergunte ao usuário com um confirm se ele gostaria realmente de remover o assento e apagar os dados; <br>

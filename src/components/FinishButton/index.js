@@ -3,49 +3,61 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import style from "./style";
 
-export default function FinishButton ({bookedSeats, cpf, setCpf, username, filmInfo, setFilmInfo, bookedSeatsName}){
-    const { Button } = style;
-    const [path, setPath] = useState(false);
-    const valCpf = /^(\d{3}\.?\d{3}\.?\d{3}-?\d{2})$/
-    
-    useEffect(() => {
-        if (bookedSeats.length !== 0 && username !== "" && valCpf.test(cpf)){
-            setPath(true)
-        } else {
-            setPath(false)
-        }
-    }, [bookedSeats, cpf, username])
+export default function FinishButton({
+  bookedSeats,
+  cpf,
+  setCpf,
+  username,
+  filmInfo,
+  setFilmInfo,
+  bookedSeatsName,
+}) {
+  const { Button } = style;
+  const [path, setPath] = useState(false);
+  const valCpf = /^(\d{3}\.?\d{3}\.?\d{3}-?\d{2})$/;
 
-    function finish(){
-        const {day, movie, name} = filmInfo;
-        setCpf(cpf.replace(/\D/g, ''))
-        
-        const infoToRequest = {
-            ids: bookedSeats,
-            name: username,
-            cpf: cpf
-        }
-
-        setFilmInfo({day, movie, username, cpf, seats: bookedSeatsName, session: name})
-
-        const promise = axios.post("https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many", infoToRequest);
-        promise.then((response) => console.log(response))
-        promise.catch((error) => console.log(error.response))
+  useEffect(() => {
+    if (bookedSeats.length !== 0 && username !== "" && valCpf.test(cpf)) {
+      setPath(true);
+    } else {
+      setPath(false);
     }
+  }, [bookedSeats, cpf, username]);
 
-    if (path === true){
-        return (
-            <Link to="/sucesso">
-                <Button onClick={()=>finish()}>
-                    Reservar assento(s)
-                 </Button>
-            </Link>
-        )
-    }
+  function finish() {
+    const { day, movie, name } = filmInfo;
+    setCpf(cpf.replace(/\D/g, ""));
 
+    const infoToRequest = {
+      ids: bookedSeats,
+      name: username,
+      cpf: cpf,
+    };
+
+    setFilmInfo({
+      day,
+      movie,
+      username,
+      cpf,
+      seats: bookedSeatsName,
+      session: name,
+    });
+
+    const promise = axios.post(
+      "https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many",
+      infoToRequest
+    );
+    promise.then((response) => console.log(response));
+    promise.catch((error) => console.log(error.response));
+  }
+
+  if (path === true) {
     return (
-        <Button onClick={()=>finish()}>
-            Reservar assento(s)
-        </Button>
-    )
+      <Link to="/sucesso">
+        <Button onClick={() => finish()}>Reservar assento(s)</Button>
+      </Link>
+    );
+  }
+
+  return <Button onClick={() => finish()}>Reservar assento(s)</Button>;
 }
