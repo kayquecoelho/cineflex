@@ -24,7 +24,7 @@ export default function FinishButton({
     }
   }, [bookedSeatsIds, cpf, username]);
 
-  function finish() {
+  function finishBooking() {
     if (bookedSeatsIds.length === 0 || !valCpf.test(cpf) || username === "") {
       return alert("Preencha os dados corretamente")
     }
@@ -54,13 +54,13 @@ export default function FinishButton({
     promise.catch((error) => console.log(error.response));
   }
 
-  if (path === true) {
-    return (
-      <Link to="/sucesso">
-        <Button onClick={() => finish()}>Reservar assento(s)</Button>
-      </Link>
-    );
+  if (!path) {
+    return <Button onClick={finishBooking}>Reservar assento(s)</Button>;
   }
-
-  return <Button onClick={() => finish()}>Reservar assento(s)</Button>;
+  
+  return (
+    <Link to="/sucesso">
+      <Button onClick={finishBooking}>Reservar assento(s)</Button>
+    </Link>
+  );
 }

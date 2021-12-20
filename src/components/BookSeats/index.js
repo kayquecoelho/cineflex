@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import FinishButton from "../FinishButton";
 import Seat from "../Seat";
 import Form from "../Form";

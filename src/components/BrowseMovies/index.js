@@ -1,6 +1,6 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import style from "./style";
 
 export default function BrowseMovies() {
