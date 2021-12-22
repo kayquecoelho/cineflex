@@ -18,11 +18,8 @@ export default function Seat({
       return alert("Este assento está ocupado!");
     }
     if (className === "selected") {
-      const removeIndex = bookedSeatsIds.findIndex((item) => item === id);
-      bookedSeatsIds.splice(removeIndex, 1);
-      bookedSeatsName.splice(removeIndex, 1);
-      setBookedSeatsIds([...bookedSeatsIds]);
-      setBookedSeatsName([...bookedSeatsName]);
+      setBookedSeatsIds(bookedSeatsIds.filter((item) => item !== id));
+      setBookedSeatsName(bookedSeatsName.filter((item) => item !== id));
       setClassName("free");
       return;
     }
