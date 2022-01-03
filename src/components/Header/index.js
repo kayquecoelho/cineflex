@@ -1,8 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import style from "./style";
+import { Top }from "./style";
 
 export default function Header() {
-  const { Top } = style;
   const { pathname } = useLocation();
   const navigate = useNavigate();
 

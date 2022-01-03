@@ -39,6 +39,6 @@ const Top = styled.header`
     }
 
 `
-export default {
+export {
     Top
 };
