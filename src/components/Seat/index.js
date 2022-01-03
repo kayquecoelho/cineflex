@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Seat } from "./style";
+import { Chair} from "./style";
 
 export default function Seat({
   name,
@@ -29,8 +29,8 @@ export default function Seat({
   }
 
   return (
-    <Seat color={className} onClick={selectSeat}>
+    <Chair color={className} onClick={selectSeat}>
       {name}
-    </Seat>
+    </Chair>
   );
 }

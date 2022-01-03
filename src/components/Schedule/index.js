@@ -38,7 +38,6 @@ export default function Schedule() {
 }
 
 function Session({ day }) {
-  const { Container } = style;
   const { weekday, date, showtimes } = day;
 
   return (

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Seat = styled.div`
+const Chair = styled.div`
     width: 26px;
     height: 26px;
 
@@ -44,5 +44,5 @@ const Seat = styled.div`
 `
 
 export {
-    Seat
+    Chair
 };
