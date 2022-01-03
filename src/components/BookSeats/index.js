@@ -4,10 +4,9 @@ import { useParams } from "react-router-dom";
 import FinishButton from "../FinishButton";
 import Seat from "../Seat";
 import Form from "../Form";
-import style from "./style";
+import { Content, SeatsBrowse, Subtitle, Container, Footer } from "./style";
 
 export default function BookSeats({ filmInfo, setFilmInfo }) {
-  const { Content, SeatsBrowse, Subtitle, Container, Footer } = style;
   const { idSession } = useParams();
   const [bookedSeatsIds, setBookedSeatsIds] = useState([]);
   const [bookedSeatsName, setBookedSeatsName] = useState([]);

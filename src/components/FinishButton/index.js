@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import style from "./style";
+import { Button } from "./style";
 
 export default function FinishButton({
   bookedSeatsIds,
@@ -12,7 +12,6 @@ export default function FinishButton({
   bookedSeatsName,
 }) {
   const navigate = useNavigate();
-  const { Button } = style;
   const valCpf = /^(\d{3}\.?\d{3}\.?\d{3}-?\d{2})$/;
 
   function finishBooking() {

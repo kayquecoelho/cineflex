@@ -42,7 +42,7 @@ const MoviesSection = styled.div`
     }
 `
 
-export default {
+export {
     MoviesSection,
     Content
 }

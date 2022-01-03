@@ -20,6 +20,6 @@ const Button = styled.button`
     line-height: 21px;
     letter-spacing: 0.04em;
 `
-export default {
+export {
     Button
 }

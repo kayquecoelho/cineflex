@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import style from "./style";
+import { Container, Title, Info, Content } from "./style";
 
 export default function Success({
   filmInfo: { cpf, day, movie, seats, username, session },
 }) {
   seats.sort();
-  const { Container, Title, Info, Content } = style;
 
   return (
     <Content>

@@ -1,7 +1,6 @@
-import style from "./style";
+import { Container } from "./style";
 
 export default function Form({ username, setUsername, cpf, setCpf }) {
-  const { Container } = style;
   return (
     <Container>
       <p>Nome do comprador:</p>

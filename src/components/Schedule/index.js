@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import style from "./style";
+import { Title, Container, Content, Chosen } from "./style";
 
 export default function Schedule() {
-  const { Title, Container, Content, Chosen } = style;
   const { idFilm } = useParams();
   const [film, setFilm] = useState(null);
 

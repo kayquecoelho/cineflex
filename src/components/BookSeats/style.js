@@ -72,8 +72,6 @@ const Container = styled.div `
         background: #FBE192;
         border: 1px solid #F7C52B;
     }
-}
-
 `
 
 const Footer = styled.footer`
@@ -119,7 +117,7 @@ const Footer = styled.footer`
     }
 `
 
-export default {
+export {
     Content,
     SeatsBrowse,
     Subtitle,

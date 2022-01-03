@@ -43,6 +43,6 @@ const Seat = styled.div`
     letter-spacing: 0.04em;
 `
 
-export default {
+export {
     Seat
 };

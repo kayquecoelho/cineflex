@@ -30,6 +30,6 @@ const Container = styled.div `
         color: #AFAFAF;
     }
 `
-export default {
+export {
     Container
 }

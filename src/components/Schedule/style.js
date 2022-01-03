@@ -100,7 +100,7 @@ const Chosen = styled.div`
   }
 `;
 
-export default {
+export {
   Chosen,
   Container,
   Content,

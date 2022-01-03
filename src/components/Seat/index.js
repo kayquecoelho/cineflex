@@ -1,5 +1,5 @@
 import { useState } from "react";
-import style from "./style";
+import { Seat } from "./style";
 
 export default function Seat({
   name,
@@ -10,7 +10,6 @@ export default function Seat({
   setBookedSeatsName,
   bookedSeatsName,
 }) {
-  const { Seat } = style;
   const [className, setClassName] = useState(isAvailable ? "free" : "occupied");
 
   function selectSeat() {
