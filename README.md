@@ -1,34 +1,26 @@
-# Descrição
+# Cineflex
 
-Nessa semana você fará uma Single-Page Application para um cinema, usando React Router!
+A booking app written in React that allows you to buy tickets to watch movies at a movie theater
 
-## Requisitos
+Try it out now: <a href="cineflex-coral.vercel.app">cineflex-coral.vercel.app</a>
 
-- [X] Buscar as informações dos filmes pela API fornecida e exibir conforme layout fornecido; <br>
-- [X] Ao clicar em um filme, o usuário deve ser redirecionado para a rota "/sessoes/:idFilme", sendo :idFilme o id do filme clicado; <br>
-- [X] A partir do id da URL, obtenha da API as sessões disponíveis para o filme e exiba conforme o layout fornecido; <br>
-- [X]  Ao clicar em uma sessão, o usuário deve ser redirecionado para a rota "/assentos/:idSessao", onde :idSessao é o id da sessão escolhida; <br>
-- [X] A partir do id da sessão, buscar os dados da sessão da API e exibir o layout conforme fornecido;<br>
-- [X] Ao clicar em um assento disponível, o assento deve ser marcado como "Selecionado"; <br>
-- [X] Ao clicar novamente em um assento selecionado, este deve voltar para "Disponível"; <br>
-- [X] Ao clicar novamente em um assento selecionado, este deve voltar para "Disponível"; <br>
-- [X] O usuário pode selecionar vários assentos; <br>
-- [X] O usuário deve poder inserir o nome e o CPF do comprador ;<br>
-- [X] o clicar em "Reservar assento(s)", o pedido deve ser enviado para o servidor e o usuário deve ser redirecionado para a rota "/sucesso".  Isso fará com os assentos marcados fiquem indisponíveis para outras marcações;<br>
-- [X] Ao longo das telas de Sessão e Assento, deve ser exibido um rodapé com as informações do filme selecionado. Estas informações virão das chamadas à API em cada tela; <br>
-- [X] Ao clicar em "Home" o usuário deve voltar para a rota inicial ("/"), com o pedido zerado; <br>
-- [X] Adicione um botão de voltar no topo do site à esquerda; <br>
-- [X] Ao clicar no botão voltar, o usuário deve retornar para a página que estava anteriormente; <br>
-- [X] O botão não deve ser exibido na tela inicial; <br>
-- [ ] Faça com que os campos de Nome e CPF do comprador deixem de ser um único campo para serem campos pra cada assento selecionado. Ou seja, cada assento selecionado terá seu próprio Nome e CPF; <br>
-- [ ] Conforme a pessoa for selecionando assentos, os campos devem ser exibidos abaixo na quantidade condizente com os assentos selecionados; <br>
-- [ ] Ao desmarcar um assento que já possuía dados preenchidos, pergunte ao usuário com um confirm se ele gostaria realmente de remover o assento e apagar os dados; <br>
+### About
 
-### Tech Stack
----
+Features implemented:
 
-Linguagens e ferramentas:
-<br>
+- Browse between lots of available movies
+- Choose day and time to watch it at movie theater
+- Select your seats
+- Confirmation page to booked seats
+- Forgot something? There's a button to comeback
+
+New features soon !
+
+- Add personal information to each seat selected
+
+### Technologies
+
+The following tools and frameworks were used to create the app
 
 <p align="center">
 <img src ="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
@@ -37,18 +29,25 @@ Linguagens e ferramentas:
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
 <p>
 
+### How to run
 
-### Deploy
----
+1. Clone this repository
+2. Install dependecies with npm
 
-O layout da aplicação está disponível no Vercel:
+```bash
+npm install
+```
 
-<a href="https://cineflex-jpbk008ay-tieskay.vercel.app/"> <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"> </a>
+3. Run the app
 
-### Autor
----
+```bash
+npm run start
+```
 
-<img src="https://avatars.githubusercontent.com/u/92492921?s=400&u=f0baf8cb4b2f009c2dac4377814681991f37d51b&v=4" width="100px;" style="border-radius: 50%;"/>
-<br>
+4. You might want to build the app
 
-Feito por Kayque Coelho! 
+```bash
+npm run build
+```
+
+5. Acess the link http://localhost:3000/
